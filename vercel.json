@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "buildCommand": "cd artifacts/api-server && npm install && npm run build",
+  "outputDirectory": "artifacts/api-server/dist",
+  "functions": {
+    "api/index.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index" },
+    { "source": "/(.*)", "destination": "/api/index" }
+  ]
+}
